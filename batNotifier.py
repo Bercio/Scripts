@@ -1,10 +1,11 @@
 #!/usr/bin/env python
+#TODO= use tempfile module, safer
+#TODO= make it into a daemon
 from subprocess import call
-from time import sleep
 #find out how the battery is doing
 def batteryCharge():
     fullChargeFile = open("/sys/class/power_supply/BAT0/charge_full", 'r')
-    nowChargeFile  = open("/sys/class/power_supply/BAT0/charge_now", 'r')
+    nowChargeFile = open("/sys/class/power_supply/BAT0/charge_now", 'r')
     fullCharge = int(fullChargeFile.readline())
     nowCharge = int(nowChargeFile.readline())
     percentageNowCharge = 100*nowCharge//fullCharge
@@ -15,7 +16,7 @@ def batteryStatus():
     return status
 def alreadyNotified(condition):
     try:
-        with open("".join(["/tmp/",condition])):
+        with open("".join(["/tmp/", condition])):
             return True
     except IOError:
         return False

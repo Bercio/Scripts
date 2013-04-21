@@ -1,4 +1,4 @@
-ACHE_HOME:-"$HOME/.cache"}
+$CACHE_HOME:-"$HOME/.cache"}
 if [ -d "$cachedir" ]; then
     cache=$cachedir/dmenu_run
 else

@@ -17,8 +17,7 @@ for lines in fields:
 for i, lines in enumerate(fields):
     if len(fields[i][5][1]) > 5:
             fields[i][5][1] = fields[i][5][1][:5]
-            fields[i][0] = fields[i][0][:-1] + str(int(fields[i][0][9]) + 1)
-
+            fields[i][0] = fields[i][0][:-2] + str(int(fields[i][0][8:]) + 1)
     start =  strptime((fields[i][0] + fields[i][5][0]), "%Y/%m/%d%H:%M")
     end = strptime((fields[i][0] + fields[i][5][1]), "%Y/%m/%d%H:%M")
     if start <= localtime() <= end:

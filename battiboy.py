@@ -16,7 +16,6 @@ def batteryStatus():
     return status
 def batteryRemainingTime():
     ibam = subprocess.getoutput("ibam --batteryadaptive").split()
-<<<<<<< HEAD
     #ibam output is different wether the bat is chargin or discharging, if
     #charging Adapted bat time left is first line, else is last
     if ibam[0] == "Adapted":
@@ -41,7 +40,6 @@ def iscritical():
                 os.remove(''.join(("/tmp/",f)))
                 exit
         return False
-=======
     ibam = ibam[-1]
     ibam = time.strptime(ibam, "%H:%M:%S")
     return ibam
@@ -55,5 +53,4 @@ if iscritical():
     subprocess.call(["notify-send, 'BATTERY', 'Bayyery low, you dig ?'"])
     tempfile.mkstemp(suffix='.pybat')
 
->>>>>>> 466cff6a76d33c90dd267ca7bbcdca9126a2e312
 print(batteryStatus(),time.strftime("%H:%M", batteryRemainingTime()))

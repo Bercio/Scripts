@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 from time import *
 from subprocess import *
-REMINDFILE = "/home/bercio/Projects/schedule.rem"
-events = str(check_output(["remind", "-s+1", "-b1", REMINDFILE]))
+REMFILE = ""
+events = str(check_output(["rem", "-s+1", "-b1"]))
 # the [:-1] eliminates wierdnon-unicode formatting
 events_lines = events.split("\\n")[:-1]
 fields = []

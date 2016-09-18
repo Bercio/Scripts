@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+sleep 55m && notify-send -t 3000 "Getup"

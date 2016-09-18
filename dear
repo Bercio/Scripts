@@ -1,4 +1,12 @@
 #!/usr/bin/env zsh
-DIARY=~/diary.txt
-echo "\n`date +%F,%A`\n================================================================================\n\n" >> $DIARY
-vim + $DIARY
+DIARY=~/diary.md
+LC_TIME='en_US.UTF-8'
+if ! grep -q "`date +'%F, %A'`" $DIARY; then
+    echo "\n`date +'%F, %A'`\n===============================================================================\n\n" >> $DIARY
+fi
+
+if [[ -z $1 ]]; then
+    nvim + -- $DIARY
+else
+    echo "$@" >> $DIARY
+fi

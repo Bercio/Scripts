@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+case $1 in
+    1) xdg-open "/home/bercio/Uni/Filosofia/Moonshadows-Cowherds" && nvim-wrapper "/home/bercio/Uni/Filosofia/Notes/Cowherds-Moonshadows.md";;
+    2) xdg-open 'file:///home/bercio/Uni/Filosofia/After-Virtue_MacIntyre.pdf' && nvim-wrapper "/home/bercio/Uni/Filosofia/Notes/McIntyre-After_Virtue.md";;
+    3) xdg-open "/home/bercio/Uni/fisica moderna.pdf" && nvim-wrapper "/home/bercio/Uni/fisica_moderna.md";;
+esac

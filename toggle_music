@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+if mpc -q; then
+	mpc toggle
+else
+	mpd && gmpc &
+fi

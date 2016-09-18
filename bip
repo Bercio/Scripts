@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+if [[ -z $1 ]]; then
+    espeak "time's up"
+elif [[ -z $2 ]]; then
+    sleep $1 && espeak "time's up"
+else
+    sleep $1 && espeak ${@:2}
+fi
+
+

@@ -1,8 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 #TODO= use tempfile module, safer
 #TODO= make it into a daemon
 from subprocess import call
 #find out how the battery is doing
+
 def batteryCharge():
     fullChargeFile = open("/sys/class/power_supply/BAT0/charge_full", 'r')
     nowChargeFile = open("/sys/class/power_supply/BAT0/charge_now", 'r')
